@@ -6,6 +6,9 @@
     <title>Namaz & Qaza Tracker - Track Your Prayers</title>
     <meta name="description" content="Track your prayers, calculate missed Qaza, and stay connected with your spiritual journey. Islamic prayer tracker with period day support." />
     <meta name="author" content="Namaz Tracker" />
+    <meta name="theme-color" content="#16a34a" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
@@ -23,5 +26,14 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(reg => console.log('Service Worker registered'))
+            .catch(err => console.log('Service Worker registration failed'));
+        });
+      }
+    </script>
   </body>
 </html>
