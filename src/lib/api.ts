@@ -1,7 +1,7 @@
 import { User } from '@/contexts/UserContext';
 
 // Replace this with your actual Google Apps Script Web App URL
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx7BmFkM4EYZjpkpi0wfOQKGe0mSCFV3G5HB84TZdwuJ0Ng1GMFmflQq6yWXXYLzJcPsA/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwTCoaWqZGOLf34wmI27nYik63cnePxEZ2W69v8uySQkpe9e6h-gpvHWBepUR0EizZDjQ/exec';
 
 export interface PrayerLog {
   gmail: string;
