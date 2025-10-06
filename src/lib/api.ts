@@ -33,6 +33,7 @@ export const api = {
   // Create new user
   async createUser(user: User): Promise<boolean> {
     try {
+      console.log('Creating user with data:', user);
       const response = await fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -41,7 +42,15 @@ export const api = {
           ...user,
         }),
       });
+      
+      console.log('Response status:', response.status);
       const data = await response.json();
+      console.log('Response data:', data);
+      
+      if (!data.success) {
+        console.error('API returned error:', data.error || 'Unknown error');
+      }
+      
       return data.success;
     } catch (error) {
       console.error('Error creating user:', error);
